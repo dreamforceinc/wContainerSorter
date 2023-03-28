@@ -27,8 +27,8 @@ namespace IngameScript
     partial class Program : MyGridProgram
     {
 
-        // ----------
-        // wContainerSorter, v0.2
+        // --------------------------------------------------
+        // wContainerSorter, v1.0
         // Copyright (c) 2023 by W0LF aka 'dreamforce'
         //
         // This script sorts the content of the containers.
@@ -38,7 +38,9 @@ namespace IngameScript
         // It can be a "Name" string - sort by SubtypeId (Computer, Stone).
         static readonly string sortType = "";
 
-        // NO CHANGES BELOW //
+
+
+        // !!! NO CHANGES BELOW !!! //
         static List<IMyTerminalBlock> containers = new List<IMyTerminalBlock>();
         static List<MyInventoryItem> containerItems = new List<MyInventoryItem>();
 
@@ -49,9 +51,9 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
-            IMyTextPanel lcd = GridTerminalSystem.GetBlockWithName("LCD") as IMyTextPanel;
-            lcd.ContentType = ContentType.TEXT_AND_IMAGE;
-            lcd.WriteText("");
+            //IMyTextPanel lcd = GridTerminalSystem.GetBlockWithName("LCD") as IMyTextPanel;
+            //lcd.ContentType = ContentType.TEXT_AND_IMAGE;
+            //lcd.WriteText("");
 
             containers.Clear();
 
@@ -75,12 +77,12 @@ namespace IngameScript
                     }
                 }
 
-                lcd.WriteText($"{container.CustomName}:\n", true);
-                foreach (MyInventoryItem item in containerItems) lcd.WriteText($"{item.Type} - {item.Amount}\n", true);
-                lcd.WriteText("\n", true);
+                //lcd.WriteText($"{container.CustomName}:\n", true);
+                //foreach (MyInventoryItem item in containerItems) lcd.WriteText($"{item.Type} - {item.Amount}\n", true);
+                //lcd.WriteText("\n", true);
             }
         }
-        // ----------
+        // --------------------------------------------------
 
 
 
